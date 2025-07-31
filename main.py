@@ -16,7 +16,7 @@ import seaborn as sns
 columns = ["mpg", "cylinders", "displacement", "horsepower", "weight",
            "acceleration", "model_year", "origin", "car_name"]
 
-df = pd.read_csv('auto-mpg.data',
+df = pd.read_csv('.data/auto-mpg.data',
                  delim_whitespace=True,
                  names=columns,
                  na_values='?',
@@ -27,6 +27,10 @@ print(df.isnull().sum())
 
 print("******datafarame info:")
 print(df.info())
+
+print("******describe  :")
+print(df.describe())
+
 
   
 
@@ -99,7 +103,7 @@ plt.axhline(0, color='red', linestyle='dashed')
 plt.xlabel('Predicted MPG')
 plt.ylabel('Residuals (Actual - Predicted)')
 plt.title('Residuals vs. Predicted MPG')
-plt.show()
+##plt.show()
 
 
 plt.figure(figsize=(8, 4))
@@ -107,4 +111,4 @@ sns.kdeplot(residuals, fill=True, color='green', alpha=0.8)
 plt.xlabel('Residual')
 plt.ylabel('Density')
 plt.title('Distribution of Residuals (Kernel Density Plot)')
-plt.show()
+#plt.show()
